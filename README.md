@@ -11,6 +11,8 @@ Free, browser-based practice for the Goethe-Zertifikat German exams.
 
 ## What's inside (A1)
 
+Three complete practice exams: the official **Modellsatz** plus **Übungssatz 01** and **Übungssatz 02**. Pick one at the top of the page. Each set keeps its own progress and results.
+
 All four modules of the exam:
 
 - **Hören**: short conversations, announcements and phone messages, with real audio
@@ -27,7 +29,7 @@ Everything runs in your browser. Progress is saved locally on your device, and t
 
 ## Run it locally
 
-Each level is a single self-contained HTML file. Download `A1/index.html` and open it in any modern browser. It works offline, apart from the web font.
+Download or clone the repo and open `A1/index.html` in any modern browser. Keep the `A1/audio` folder next to it for the listening tasks. It works offline, apart from the web font.
 
 ## Useful links
 
@@ -41,6 +43,6 @@ Each level is a single self-contained HTML file. Download `A1/index.html` and op
 
 ## Credits
 
-The tasks, audio recordings and answer keys come from the official **Goethe-Institut** model exam (Modellsatz *Start Deutsch 1*). Many thanks to the [Goethe-Institut](https://www.goethe.de/) for making them freely available. This is an unofficial practice tool and is not affiliated with the Goethe-Institut. For official information and exam registration, visit [goethe.de](https://www.goethe.de/).
+The tasks, audio recordings and answer keys come from the official **Goethe-Institut** materials for *Start Deutsch 1*: the Modellsatz and the Übungssätze 01 and 02 ([practice materials](https://www.goethe.de/ins/de/en/prf/prf/gzsd1/ueb.html)). Many thanks to the [Goethe-Institut](https://www.goethe.de/) for making them freely available. This is an unofficial practice tool and is not affiliated with the Goethe-Institut. For official information and exam registration, visit [goethe.de](https://www.goethe.de/).
 
 The example texts for Schreiben and Sprechen are suggestions, not official model answers.
