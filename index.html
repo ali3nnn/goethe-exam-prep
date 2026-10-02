@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Goethe Prüfungstraining</title>
+<meta name="description" content="Free practice for the Goethe-Zertifikat exams: timed exam simulation and practice mode.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--desk:#E6E9E2;--paper:#FFFFFF;--ink:#222;--muted:#62675E;--rule:#CDD2C6;--soft:#F3F5EF;--green:#A0C814}
+@media (prefers-color-scheme: dark){:root{--desk:#121510;--paper:#1D211A;--ink:#EDEFEA;--muted:#A3A99C;--rule:#343A2E;--soft:#262B22}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--desk);color:var(--ink);font-family:"Source Sans 3","Segoe UI",Arial,sans-serif;font-size:17px;line-height:1.5}
+.sheet{max-width:720px;margin:16px auto 40px;background:var(--paper);box-shadow:0 0 0 1px var(--rule);padding:0 0 28px}
+@media(max-width:740px){.sheet{margin:0;box-shadow:none;min-height:100vh}}
+.mast{display:flex;border-bottom:3px solid var(--green)}
+.mast .tag{background:var(--green);color:#1d2600;font-weight:900;padding:14px 16px;font-size:1.6rem;line-height:1}
+.mast .ttl{padding:10px 16px;display:flex;flex-direction:column;justify-content:center}
+.mast .ttl span{color:var(--muted);font-size:.9rem}
+.pad{padding:0 20px}
+h1{font-size:2rem;line-height:1.1;margin:24px 0 6px;font-weight:900}
+.muted{color:var(--muted)}
+.en{color:var(--muted);font-size:.9rem;font-style:italic}
+.levels{display:grid;gap:10px;margin:20px 0}
+.lvl{display:flex;align-items:center;gap:14px;border:2px solid var(--ink);padding:14px 16px;text-decoration:none;color:inherit}
+a.lvl:hover{background:var(--soft)}
+a.lvl:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.lvl b.code{background:var(--green);color:#1d2600;font-weight:900;font-size:1.4rem;padding:6px 10px;min-width:56px;text-align:center}
+.lvl.soon{border-color:var(--rule);color:var(--muted)}
+.lvl.soon b.code{background:var(--soft);color:var(--muted)}
+.lvl span small{display:block;color:var(--muted)}
+.lvl .go{margin-left:auto;font-weight:900}
+.foot{font-size:.82rem;color:var(--muted);margin-top:26px}
+.foot a{color:inherit}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="mast"><div class="tag">DE</div><div class="ttl"><b>Goethe-Zertifikat · Prüfungstraining</b><span>Kostenlos üben · Free practice</span></div></div>
+  <div class="pad">
+    <h1>Prüfungstraining</h1>
+    <p class="muted">Bereiten Sie sich auf die Goethe-Prüfung vor: Hören, Lesen, Schreiben und Sprechen, mit Prüfungssimulation und Übungsmodus.<br>
+    <span class="en">Prepare for the Goethe exam: all four modules, a timed exam simulation and a relaxed practice mode. Runs in your browser; your answers stay on your device.</span></p>
+    <div class="levels">
+      <a class="lvl" href="A1/"><b class="code">A1</b><span><b>Start Deutsch 1</b><small>Hören · Lesen · Schreiben · Sprechen</small></span><span class="go">→</span></a>
+      <div class="lvl soon" aria-disabled="true"><b class="code">A2</b><span><b>Goethe-Zertifikat A2</b><small>Demnächst · Coming soon</small></span></div>
+    </div>
+    <p class="foot">Inoffizielle Übungsversion. Aufgaben, Audios und Lösungen stammen aus den Modellsätzen des <a href="https://www.goethe.de/">Goethe-Instituts</a>. Vielen Dank an das Goethe-Institut!</p>
+  </div>
+</div>
+</body>
+</html>
