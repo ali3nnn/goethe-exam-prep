@@ -29,6 +29,16 @@ Everything runs in your browser. Progress is saved locally on your device, and t
 
 Each level is a single self-contained HTML file. Download `A1/index.html` and open it in any modern browser. It works offline, apart from the web font.
 
+## Useful links
+
+- [Modellsatz A1 · Start Deutsch 1](https://bfu.goethe.de/a1_sd1): official A1 sample exam
+- [Goethe-Zertifikate](https://www.goethe.de/ins/de/en/prf/prf.html): exams and certificates
+- [Practice materials](https://www.goethe.de/ins/de/en/prf/exc.html): exam practice materials
+- [Exam training](https://www.goethe.de/en/spr/prf/ueb.html): exam preparation
+- [Deutsch für dich](https://www.goethe.de/prj/dfd/en/home.cfm): exercises
+- [Practice German](https://www.goethe.de/en/spr/ueb.html): free German practice from the Goethe-Institut
+- [Learn German with DW](https://learngerman.dw.com/en): free courses from Deutsche Welle
+
 ## Credits
 
 The tasks, audio recordings and answer keys come from the official **Goethe-Institut** model exam (Modellsatz *Start Deutsch 1*). Many thanks to the [Goethe-Institut](https://www.goethe.de/) for making them freely available. This is an unofficial practice tool and is not affiliated with the Goethe-Institut. For official information and exam registration, visit [goethe.de](https://www.goethe.de/).
