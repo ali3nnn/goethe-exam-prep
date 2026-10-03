@@ -586,7 +586,7 @@ function vPracticeCover(){
   ${MODS.map(m=>`<tr><td><b>${m.name}</b><br><small class="muted">${m.teile} Teile · ${m.info}</small></td><td><span class="status">${practiceStatus(m.k)}</span></td>
    <td><button class="btn ${practiceStatus(m.k)?"line":""} small" data-single="${m.k}">${practiceStatus(m.k)?"Weiter":"Üben"}</button></td></tr>`).join("")}
   </tbody></table>
-  <div class="row"><button class="btn line" data-preset="1">Übungsantworten löschen</button></div>
+  <div class="row" style="margin-top:22px"><button class="btn line small" data-resetall="1">Fortschritt zurücksetzen</button></div>
   <p class="foot">Inoffizielle Übungsversion. Aufgaben, Audios und Lösungen: Goethe-Institut, Modellsatz und Übungssätze Start Deutsch 1 (goethe.de). Beispieltexte für Schreiben und Sprechen sind Vorschläge.</p></div>`;}
 function vCover(){
   if(PR())return vPracticeCover();
@@ -602,6 +602,7 @@ function vCover(){
   </tbody></table>
   <div class="row"><button class="btn green" data-full="1">${anyDone&&S.full?"Prüfung fortsetzen":"Gesamte Prüfung starten"}</button>${anyDone?`<button class="btn line" data-go="results">Ergebnis ansehen</button>`:""}</div>
   <div class="box"><b>Bitte beachten Sie</b><br>Wörterbücher und Mobiltelefone sind in der Prüfung nicht erlaubt. Bestanden ist die Prüfung ab 60 von 100 Punkten.<br><span class="en">No dictionaries or phones. You pass with 60 of 100 points.</span></div>
+  <div class="row" style="margin-top:22px"><button class="btn line small" data-resetall="1">Fortschritt zurücksetzen</button></div>
   <p class="foot">Inoffizielle Übungsversion. Aufgaben, Audios und Lösungen: Goethe-Institut, Modellsatz und Übungssätze Start Deutsch 1 (goethe.de). Beispieltexte für Schreiben und Sprechen sind Vorschläge.</p></div>`;
 }
 const INTRO={
@@ -786,7 +787,7 @@ app.addEventListener("click",e=>{
   if(x=c("[data-pretry]")){const p=[...HOEREN,...LESEN].find(q=>q.id===x.dataset.pretry);delete S.chk[p.id];p.items.forEach(i=>delete S.ans[x.dataset.pre+i.n]);save();render();document.getElementById("t"+(([...HOEREN,...LESEN].filter(q=>q.id[0]===p.id[0]).indexOf(p))+1)).scrollIntoView();return;}
   if(x=c("[data-s1check]")){S.chk.s1=1;save();const k=window.scrollY;render();window.scrollTo(0,k);return;}
   if(x=c("[data-s1retry]")){delete S.chk.s1;S.form={};save();render();return;}
-  if(x=c("[data-preset]")){ask("<h3>Übungsantworten löschen?</h3><p>Ihre Prüfungsergebnisse bleiben erhalten.</p>",()=>{S=fresh();save();render();});return;}
+  if(x=c("[data-resetall]")){ask("<h3>Fortschritt zurücksetzen?</h3><p>Alle Antworten und Ergebnisse werden gelöscht: in allen drei Sätzen, im Prüfungs- und im Übungsmodus.</p><p class=\"en\">Clears all answers and results in every set and both modes.</p>",resetAll);return;}
   if(PR()&&(x=c("[data-single]"))){if(!S.cards)drawCards();startModule(x.dataset.single);return;}
   if(x=c("[data-single]")){S.full=false;S.mod=x.dataset.single;if(S.done[S.mod]){ask(`<h3>${modName(S.mod)} noch einmal?</h3><p>Ihre bisherigen Antworten in diesem Modul werden gelöscht.</p>`,()=>{resetModule(S.mod);go("intro");});return;}go("intro");return;}
   if(x=c("[data-start]")){startModule(x.dataset.start);return;}
@@ -804,6 +805,9 @@ app.addEventListener("click",e=>{
   if(x=c("[data-review]")){S.review=x.dataset.review;S.mod=x.dataset.review;S.screen="exam";save();render();window.scrollTo(0,0);return;}
   if(x=c("[data-restart]")){ask("<h3>Neue Prüfung beginnen?</h3><p>Alle Antworten und Ergebnisse werden gelöscht.</p>",()=>{const cand=S.cand;S=fresh();S.cand=cand;save();go("cover");});return;}
 });
+function resetAll(){stopAudio();clearInterval(tick);const cand=S.cand;
+  try{Object.keys(localStorage).filter(k=>/^a1-(exam|practice)-/.test(k)).forEach(k=>localStorage.removeItem(k));}catch(e){}
+  S=fresh();S.cand=cand;save();render();window.scrollTo(0,0);}
 function switchSet(k){save();useSet(k);load();S.screen="cover";S.review=null;save();render();try{history.replaceState(null,"",k==="ms"?location.pathname:"#"+k);}catch(e){}}
 function switchMode(m){save();MODE=m;load();S.screen="cover";S.review=null;save();render();window.scrollTo(0,0);}
 function resetModule(k){
